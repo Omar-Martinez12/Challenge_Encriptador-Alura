@@ -42,11 +42,21 @@ function desencriptar(cadenaDesencripta){
     }
     return cadenaDesencripta;
 }
-
+/*
 //Botón y Función de Copiar
 function botonCopiar(){
     mensaje.select();
     navigator.clipboard.writeText(mensaje.value);
     mensaje.value = "";
     alert("Texto Copiado");
+}*/
+
+//corrección
+// Botón y Función de Copiar
+function botonCopiar() {
+  mensaje.select(); // Intenta seleccionar el texto (no funcionará en dispositivos móviles)
+  mensaje.setSelectionRange(0, 99999); // Selección alternativa para dispositivos móviles
+  document.execCommand('copy'); // Copia el texto seleccionado
+  mensaje.value = "";
+  alert("Texto Copiado");
 }
